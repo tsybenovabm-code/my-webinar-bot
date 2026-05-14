@@ -4,8 +4,9 @@ from datetime import datetime
 
 
 class Database:
-    import os
-def __init__(self, db_path: str = os.getenv("DATABASE_PATH", "users.db")):
+    def __init__(self, db_path: str = None):
+        if db_path is None:
+            db_path = os.getenv("DATABASE_PATH", "users.db")
         self.db_path = db_path
         self._init_db()
 
@@ -25,15 +26,12 @@ def __init__(self, db_path: str = os.getenv("DATABASE_PATH", "users.db")):
             conn.commit()
 
     def add_user(self, chat_id: int, username: str, full_name: str) -> bool:
-        """Добавляет пользователя. Возвращает True если новый, False если уже есть."""
         with self._connect() as conn:
             existing = conn.execute(
                 "SELECT 1 FROM users WHERE chat_id = ?", (chat_id,)
             ).fetchone()
-
             if existing:
                 return False
-
             conn.execute(
                 "INSERT INTO users (chat_id, username, full_name, joined_at) VALUES (?, ?, ?, ?)",
                 (chat_id, username, full_name, datetime.now().isoformat()),
