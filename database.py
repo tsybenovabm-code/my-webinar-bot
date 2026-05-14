@@ -3,7 +3,8 @@ from datetime import datetime
 
 
 class Database:
-    def __init__(self, db_path: str = "users.db"):
+    import os
+def __init__(self, db_path: str = os.getenv("DATABASE_PATH", "users.db")):
         self.db_path = db_path
         self._init_db()
 
