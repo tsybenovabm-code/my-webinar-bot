@@ -11,3 +11,4 @@ ADMIN_IDS = list(map(int, os.getenv("ADMIN_IDS", "0").split(",")))  # Твой T
 COURSE_INVITE_LINK = os.getenv("COURSE_INVITE_LINK", "https://t.me/+XXXXXXXXXX")
 COURSE_CHANNEL_NAME = os.getenv("COURSE_CHANNEL_NAME", "курс по SQL")
 # ──────────────────────────────────────────────────────────────────────────────
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@канал")
