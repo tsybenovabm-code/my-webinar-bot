@@ -54,8 +54,8 @@ async def give_access(message, user, context):
         [InlineKeyboardButton("📚 Получить доступ к курсу", url=COURSE_INVITE_LINK)],
     ])
 
-    if is_new:
-    text = (
+   if is_new:
+        text = (
         f"Отлично! \n\n"
         "Даем тебе полностью *бесплатный доступ к нашему курсу по SQL*.\n"
         "Это один из главных инструментов работы с данными для любого аналитика.\n\n"
