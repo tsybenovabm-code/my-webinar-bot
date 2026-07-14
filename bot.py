@@ -34,7 +34,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("📚 Курс по SQL (бесплатно)", url=COURSE_INVITE_LINK)],
-        [InlineKeyboardButton("⚡️ Неделя алгоритмов (бесплатно)", url=ALGO_INVITE_LINK)],
+        [InlineKeyboardButton("⚡️ Python для алгоритмов (бесплатно)", url=ALGO_INVITE_LINK)],
     ])
 
     if is_new:
@@ -47,7 +47,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     else:
         text = (
             f"С возвращением, {user.first_name}! 👋\n\n"
-            "У нас стартует Неделя алгоритмов — открытый бесплатный курс.\n"
+            "Запустили Python для алгоритмов — открытый бесплатный курс.\n"
             "Присоединяйся, пока не закрыли набор 👇"
         )
 
